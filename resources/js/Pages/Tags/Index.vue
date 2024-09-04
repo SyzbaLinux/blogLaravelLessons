@@ -25,9 +25,11 @@
                 <td>{{ tag.id }}</td>
                 <td>{{ tag.name }}</td>
                 <td>
-                    <button>
-                        View
-                    </button>
+                   <Link :href="route('tags.show', tag.id)">
+                       <button>
+                           View
+                       </button>
+                   </Link>
 
                     <button>
                         Edit
@@ -44,8 +46,9 @@
 
 <script>
 import Navbar from "@/Components/Navbar.vue";
+import { Link } from '@inertiajs/vue3'
 export default {
-    components: {Navbar}
+    components: {Navbar, Link}
 
 }
 </script>
